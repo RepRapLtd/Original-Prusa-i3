@@ -32,9 +32,9 @@ module idler_spring_screws()
 {
     
         
-        translate([0,-27,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); 
-        translate([0,-27.5,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); 
-        translate([0,-26.5,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50);
+        translate([0,-30,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
+        translate([0,-29,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
+        translate([0,-28,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
         
         translate([-1.7,-27.5,-4.2]) cube([1.7*2,1,10]);
         
@@ -45,15 +45,15 @@ module idler_spring_screws()
         {
             union()
             {
-            translate([0,-27,5.5]) rotate([0,0,0]) cylinder(r=3.5, h=30, $fn=50); 
-            translate([0,-27.5,5.5]) rotate([3,0,0]) cylinder(r=3.5, h=30, $fn=50); 
-            translate([0,-26.5,5.5]) rotate([-3,0,0]) cylinder(r=3.5, h=30, $fn=50); 
+            translate([0,-30,5.5]) rotate([0,0,0]) cylinder(r=3.5, h=30, $fn=50); 
+            translate([0,-27.5,5.5]) rotate([8,0,0]) cylinder(r=3.5, h=30, $fn=50); //AB
+            translate([0,-26.5,5.5]) rotate([-8,0,0]) cylinder(r=3.5, h=30, $fn=50); //AB
             }
             translate([-5,-35,-4.5]) cube([10,20,10]);
             translate([-5,-33.6,-4.2]) cube([10,4.4,10]);
             translate([-5,-24.8,-4.2]) cube([10,4.4,10]);
         }
-    }
+}
 
 
     
@@ -116,12 +116,12 @@ module idler_body_base()
         translate([-0.5+56,0,0]) rotate([0,90,0]) cylinder(r=22, h=7, $fn=50); 
         
         // idler body space
-        translate([-5,0,0]) rotate([0,90,0]) cylinder(r=18, h=75.5, $fn=50); 
+        translate([-5,0,0]) rotate([0,90,0]) cylinder(r=18.5, h=75.5, $fn=50); //AB
         translate([-30,0,0]) rotate([0,90,0]) cylinder(r=11.5, h=5, $fn=50); 
         translate([-30,0,-8]) rotate([0,90,0]) cylinder(r=4, h=5, $fn=50); 
         
         // motor coupling space
-        translate([-26,0,0]) rotate([0,90,0]) cylinder(r=18, h=22, $fn=50);
+        translate([-26,0,0]) rotate([0,90,0]) cylinder(r=18.5, h=22, $fn=50); //AB
         translate([-24.1,-10,-30]) cube([15,20,20]);
 
         // motor screws
