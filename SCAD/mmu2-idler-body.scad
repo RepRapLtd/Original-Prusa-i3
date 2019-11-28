@@ -5,6 +5,10 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+// Clearance increased for rotating idler bearing holder
+// Slots for springs and screws enlarged to allow wider opening against springs.
+// reprapltd.com
+// 27 November 2019
 
 module motor_screws()
 {
@@ -31,7 +35,10 @@ module motor_screws()
 module idler_spring_screws()
 {
     
-        
+        // translate([0,-27,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); 
+        // translate([0,-27.5,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); 
+        // translate([0,-26.5,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50);
+    
         translate([0,-30,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
         translate([0,-29,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
         translate([0,-28,-4]) rotate([0,0,0]) cylinder(r=1.7, h=30, $fn=50); //AB
@@ -45,7 +52,9 @@ module idler_spring_screws()
         {
             union()
             {
-            translate([0,-30,5.5]) rotate([0,0,0]) cylinder(r=3.5, h=30, $fn=50); 
+            translate([0,-30,5.5]) rotate([0,0,0]) cylinder(r=3.5, h=30, $fn=50);
+            // translate([0,-27.5,5.5]) rotate([3,0,0]) cylinder(r=3.5, h=30, $fn=50); 
+            // translate([0,-26.5,5.5]) rotate([-3,0,0]) cylinder(r=3.5, h=30, $fn=50);  
             translate([0,-27.5,5.5]) rotate([8,0,0]) cylinder(r=3.5, h=30, $fn=50); //AB
             translate([0,-26.5,5.5]) rotate([-8,0,0]) cylinder(r=3.5, h=30, $fn=50); //AB
             }
@@ -116,11 +125,13 @@ module idler_body_base()
         translate([-0.5+56,0,0]) rotate([0,90,0]) cylinder(r=22, h=7, $fn=50); 
         
         // idler body space
+        //translate([-5,0,0]) rotate([0,90,0]) cylinder(r=18, h=75.5, $fn=50); 
         translate([-5,0,0]) rotate([0,90,0]) cylinder(r=18.5, h=75.5, $fn=50); //AB
         translate([-30,0,0]) rotate([0,90,0]) cylinder(r=11.5, h=5, $fn=50); 
         translate([-30,0,-8]) rotate([0,90,0]) cylinder(r=4, h=5, $fn=50); 
         
         // motor coupling space
+        //translate([-26,0,0]) rotate([0,90,0]) cylinder(r=18, h=22, $fn=50);
         translate([-26,0,0]) rotate([0,90,0]) cylinder(r=18.5, h=22, $fn=50); //AB
         translate([-24.1,-10,-30]) cube([15,20,20]);
 
@@ -189,8 +200,8 @@ module idler_body_base()
         
         
         //version
-        translate([-5,24.4,7]) rotate([-90,180,0]) linear_extrude(height = 0.8) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); }  
+        translate([5,24.4,10]) rotate([-90,180,0]) linear_extrude(height = 0.8) 
+        { text("RRL1.1",font = "helvetica:style=Bold", size=5, center=true); } //AB  
     
     }
 }

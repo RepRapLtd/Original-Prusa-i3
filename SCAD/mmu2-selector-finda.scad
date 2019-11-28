@@ -5,6 +5,10 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+// Filament path improved with cone and 4mm PTFE exit tube
+// reprapltd.com
+// 28 November 2019
+
 module blade()
 {
         difference()
@@ -33,8 +37,10 @@ module selector()
         // filament path
         translate([59,-30,4]) rotate([90,0,0]) cylinder(r=1.3, h=40, $fn=50); 
         translate([59,-27,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=1.4,h=15, $fn=50); 
-        translate([59,-60,4]) rotate([90,0,0]) cylinder(r2=2.5, r1=1.3,h=2, $fn=50);
-       
+        //translate([59,-60,4]) rotate([90,0,0]) cylinder(r2=2.5, r1=1.3,h=2, $fn=50);
+        translate([59,-57,4]) rotate([90,0,0]) cylinder(r=2.2, h=7, $fn=50); //AB
+        translate([59,-27.5,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=2.6,h=7, $fn=50); //AB
+        
         translate([59,-55,4]) rotate([90,0,0]) cylinder(r2=1.3, r1=2.5,h=3, $fn=50);
         translate([59,-52,4]) rotate([90,0,0]) cylinder(r2=2.5, r1=1.3,h=3, $fn=50);
        
@@ -150,8 +156,8 @@ module selector()
             
             
         //version
-        translate([49,-40,-23.3]) rotate([0,180,180]) linear_extrude(height = 0.8) 
-        { text("R1",font = "helvetica:style=Bold", size=5, center=true); } 
+        translate([41,-40,-23.3]) rotate([0,180,180]) linear_extrude(height = 0.8) //AB 
+        { text("RRL1.1",font = "helvetica:style=Bold", size=5, center=true); } //AB
         
     }
 }
